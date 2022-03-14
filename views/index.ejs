@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <style>
+    h1{
+      text-align: center;
+    }
+    .sensor{
+      display:block;
+      border:1px solid black;
+      margin-bottom: 2px;
+      padding:2px
+    }
+    .sensor>.title{
+      display:block;
+      border-bottom: 1px solid black;
+      margin-top: 2px;
+      margin-bottom: 2px;
+    }
+    .sensor>.sensorInfo{
+      border-bottom: 1px solid black;
+      margin-bottom: 2px;
+    }
+    .sensor>.sensorValueList{
+      display: grid;
+      grid-template-columns: 70px 1fr;
+      row-gap: 3px;
+    }
+    .sensor>.sensorValue{
+      padding-bottom: 2px;
+      border-bottom: 1px solid grey
+    }
+    .sensor>.sensorValueList>.textbox{
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <h1>Online Sensor Value Check</h1>
+  <div class="sensorList">
+    <%-include('./sensorTemplate.ejs', {sensors:sensors}) %>
+  </div>
+  <script src="/js/sensors.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="/js/sensorRefresh.js"></script>
+</body>
+</html>

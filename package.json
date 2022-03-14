@@ -1,0 +1,21 @@
+{
+  "name": "esp8266_and_heroku",
+  "version": "1.0.0",
+  "description": "Node.js app deployed on heroku PaaS, working with ESP8266",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "start:dev": "pm2 start app.js --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.2",
+    "compression": "^1.7.4",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "mongoose": "^6.2.0",
+    "socket.io": "^4.4.1"
+  }
+}

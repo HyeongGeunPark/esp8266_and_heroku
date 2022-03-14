@@ -1,0 +1,15 @@
+<!-- sensor list template
+uses sensor information in /sensors.js -->
+<!-- /sensors.js and /public/js/sensors.js must be identical -->
+<% for (const key in sensors) {%>
+  <div class="sensor">
+    <div class="title"> <%=sensors[key].name%> </div>
+    <div class="sensorInfo"></div>
+    <div class="sensorValueList">
+    <% for (const i in sensors[key].items) { %>
+      <div class="sensorValueName"> <%=sensors[key].items[i].toUpperCase()%></div>
+      <div>: <input class="textbox" id="<%=sensors[key].name+'_'+sensors[key].items[i]%>" type="text" name="<%=sensors[key].items[i]%>" value="" readonly="true"></div>
+    <% } %>
+    </div>
+  </div>
+<% } %>
